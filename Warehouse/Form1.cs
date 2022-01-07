@@ -31,7 +31,7 @@ namespace Warehouse
             DataBase database = new DataBase();
             DataTable dataTable = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `login` = @uL AND `pass` = @uP", database.GetConnetcion());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM user WHERE login = @uL AND pass = @uP", database.GetConnetcion());
             command.Parameters.Add("@uL",MySqlDbType.VarChar).Value = login;
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = pass;
             adapter.SelectCommand = command;

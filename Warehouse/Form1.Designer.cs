@@ -39,7 +39,7 @@ namespace Warehouse
             // buttonLogin
             // 
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLogin.Location = new System.Drawing.Point(101, 176);
+            this.buttonLogin.Location = new System.Drawing.Point(101, 178);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 0;
@@ -69,7 +69,6 @@ namespace Warehouse
             this.label2.Size = new System.Drawing.Size(83, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Пароль";
-          
             // 
             // loginText
             // 

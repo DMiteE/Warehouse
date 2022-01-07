@@ -36,41 +36,45 @@ namespace Warehouse
             this.ProductName3 = new System.Windows.Forms.Label();
             this.PnameText = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.SearchName = new System.Windows.Forms.Label();
-            this.SearchID = new System.Windows.Forms.Label();
-            this.textName = new System.Windows.Forms.TextBox();
-            this.textID = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AmountText = new System.Windows.Forms.TextBox();
             this.PriceText = new System.Windows.Forms.TextBox();
+            this.AmountText = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textID = new System.Windows.Forms.TextBox();
+            this.textName = new System.Windows.Forms.TextBox();
+            this.SearchID = new System.Windows.Forms.Label();
+            this.SearchName = new System.Windows.Forms.Label();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Namee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pricee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amountt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Names,
-            this.Amount,
-            this.Price,
-            this.Edit,
+            this.Number,
+            this.Namee,
+            this.Pricee,
+            this.Amountt,
             this.Delete});
             this.dataGridView1.Location = new System.Drawing.Point(15, 52);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ShowCellToolTips = false;
+            this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(945, 478);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // AddProduct
             // 
@@ -136,6 +140,21 @@ namespace Warehouse
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             // 
+            // PriceText
+            // 
+            this.PriceText.Location = new System.Drawing.Point(102, 76);
+            this.PriceText.Name = "PriceText";
+            this.PriceText.Size = new System.Drawing.Size(215, 20);
+            this.PriceText.TabIndex = 7;
+            // 
+            // AmountText
+            // 
+            this.AmountText.Location = new System.Drawing.Point(102, 44);
+            this.AmountText.Name = "AmountText";
+            this.AmountText.Size = new System.Drawing.Size(215, 20);
+            this.AmountText.TabIndex = 6;
+            this.AmountText.TextChanged += new System.EventHandler(this.AmountText_TextChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textID);
@@ -150,25 +169,21 @@ namespace Warehouse
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск";
             // 
-            // SearchButton
+            // textID
             // 
-            this.SearchButton.Location = new System.Drawing.Point(242, 102);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(75, 23);
-            this.SearchButton.TabIndex = 0;
-            this.SearchButton.Text = "Поиск";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            this.textID.Location = new System.Drawing.Point(113, 58);
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(204, 20);
+            this.textID.TabIndex = 4;
+            this.textID.TextChanged += new System.EventHandler(this.textID_TextChanged);
             // 
-            // SearchName
+            // textName
             // 
-            this.SearchName.AutoSize = true;
-            this.SearchName.Location = new System.Drawing.Point(19, 34);
-            this.SearchName.Name = "SearchName";
-            this.SearchName.Size = new System.Drawing.Size(89, 13);
-            this.SearchName.TabIndex = 1;
-            this.SearchName.Text = "Поиск по имени";
-            this.SearchName.Click += new System.EventHandler(this.SearchName_Click);
+            this.textName.Location = new System.Drawing.Point(113, 27);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(204, 20);
+            this.textName.TabIndex = 3;
+            this.textName.TextChanged += new System.EventHandler(this.textName_TextChanged);
             // 
             // SearchID
             // 
@@ -180,74 +195,87 @@ namespace Warehouse
             this.SearchID.Text = "Поиск по номеру";
             this.SearchID.Click += new System.EventHandler(this.SearchID_Click);
             // 
-            // textName
+            // SearchName
             // 
-            this.textName.Location = new System.Drawing.Point(113, 27);
-            this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(204, 20);
-            this.textName.TabIndex = 3;
-            this.textName.TextChanged += new System.EventHandler(this.textName_TextChanged);
+            this.SearchName.AutoSize = true;
+            this.SearchName.Location = new System.Drawing.Point(19, 34);
+            this.SearchName.Name = "SearchName";
+            this.SearchName.Size = new System.Drawing.Size(89, 13);
+            this.SearchName.TabIndex = 1;
+            this.SearchName.Text = "Поиск по имени";
+            this.SearchName.Click += new System.EventHandler(this.SearchName_Click);
             // 
-            // textID
+            // SearchButton
             // 
-            this.textID.Location = new System.Drawing.Point(113, 58);
-            this.textID.Name = "textID";
-            this.textID.Size = new System.Drawing.Size(204, 20);
-            this.textID.TabIndex = 4;
-            this.textID.TextChanged += new System.EventHandler(this.textID_TextChanged);
+            this.SearchButton.Location = new System.Drawing.Point(242, 102);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchButton.TabIndex = 0;
+            this.SearchButton.Text = "Поиск";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // Id
+            // menuStrip1
             // 
-            this.Id.FillWeight = 1000F;
-            this.Id.HeaderText = "Номер";
-            this.Id.Name = "Id";
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1308, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // Names
+            // файлToolStripMenuItem
             // 
-            this.Names.HeaderText = "Наименование";
-            this.Names.Name = "Names";
-            this.Names.Width = 300;
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
             // 
-            // Amount
+            // сохранитьToolStripMenuItem
             // 
-            this.Amount.HeaderText = "Колличество";
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 150;
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
-            // Price
+            // Number
             // 
-            this.Price.HeaderText = "Цена";
-            this.Price.Name = "Price";
-            this.Price.Width = 150;
+            this.Number.DataPropertyName = "id";
+            this.Number.HeaderText = "Номер";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
             // 
-            // Edit
+            // Namee
             // 
-            this.Edit.HeaderText = "";
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Редактировать";
-            this.Edit.UseColumnTextForButtonValue = true;
+            this.Namee.DataPropertyName = "Name";
+            this.Namee.HeaderText = "Наименование";
+            this.Namee.Name = "Namee";
+            this.Namee.Width = 500;
+            // 
+            // Pricee
+            // 
+            this.Pricee.DataPropertyName = "Price";
+            this.Pricee.HeaderText = "Цена";
+            this.Pricee.Name = "Pricee";
+            this.Pricee.ReadOnly = true;
+            this.Pricee.Width = 125;
+            // 
+            // Amountt
+            // 
+            this.Amountt.DataPropertyName = "Amount";
+            this.Amountt.HeaderText = "Колличество";
+            this.Amountt.Name = "Amountt";
+            this.Amountt.Width = 115;
             // 
             // Delete
             // 
-            this.Delete.HeaderText = "";
+            this.Delete.HeaderText = "Удалить";
             this.Delete.Name = "Delete";
             this.Delete.Text = "Удалить";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // AmountText
-            // 
-            this.AmountText.Location = new System.Drawing.Point(102, 44);
-            this.AmountText.Name = "AmountText";
-            this.AmountText.Size = new System.Drawing.Size(215, 20);
-            this.AmountText.TabIndex = 6;
-            this.AmountText.TextChanged += new System.EventHandler(this.AmountText_TextChanged);
-            // 
-            // PriceText
-            // 
-            this.PriceText.Location = new System.Drawing.Point(102, 76);
-            this.PriceText.Name = "PriceText";
-            this.PriceText.Size = new System.Drawing.Size(215, 20);
-            this.PriceText.TabIndex = 7;
+            this.Delete.ToolTipText = "Удалить";
             // 
             // Box
             // 
@@ -257,6 +285,8 @@ namespace Warehouse
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Box";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
@@ -266,13 +296,14 @@ namespace Warehouse
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.Button AddProduct;
         private new System.Windows.Forms.Label ProductName;
@@ -286,13 +317,16 @@ namespace Warehouse
         private System.Windows.Forms.Label SearchID;
         private System.Windows.Forms.Label SearchName;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Names;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.TextBox PriceText;
         private System.Windows.Forms.TextBox AmountText;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Namee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pricee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amountt;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }
